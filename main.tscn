@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://xwcr8byd0u2j"]
+
+[ext_resource type="PackedScene" uid="uid://b03wqpi0vhmb6" path="res://PalletTown.tscn" id="1_1s2f6"]
+[ext_resource type="PackedScene" uid="uid://dlmo11tm47a2w" path="res://Player.tscn" id="2_spcds"]
+
+[node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("2_spcds")]
+position = Vector2(534, 266)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Pallet Town" parent="." instance=ExtResource("1_1s2f6")]
+position = Vector2(682, 310)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(534, 266)
