@@ -13,6 +13,10 @@ func _physics_process(_delta):
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	)
 
+	# TODO: continue disallowing diagonal movement, but make it so whatever the most recent direction button pressed takes priority.
+	if velocity[0] != 0:
+		velocity.y = 0
+
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
